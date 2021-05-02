@@ -8,8 +8,8 @@ const Sidebar = ({ setIsSidebarOpen, IsSidebarOpen }) => {
 			className="main-container"
 			style={
 				IsSidebarOpen
-					? { width: "25%", transition: "width 100ms ease-in-out" }
-					: { width: "5.5%", transition: "width 100ms ease-in-out" }
+					? { width: "275px", transition: "width 100ms ease-in-out" }
+					: { width: "60px", transition: "width 100ms ease-in-out" }
 			}
 			onMouseEnter={() => setIsSidebarOpen(true)}
 			onMouseLeave={() => setIsSidebarOpen(false)}
