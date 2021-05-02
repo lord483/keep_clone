@@ -2,7 +2,7 @@ $clr-primary: #202124;
 $clr-lightgrey: #525356;
 $clr-secondary: #999999;
 $clr-logo: #e2e2e2;
-$clr-hover: #41331c;
+$clr-active: #41331c;
 
 * {
 	margin: 0;
@@ -12,20 +12,19 @@ $clr-hover: #41331c;
 
 .main-container {
 	border-right: 1px solid $clr-lightgrey;
-	width: 25%;
 	overflow: hidden;
 	white-space: nowrap;
 	height: calc(100vh - 63px);
-}
-
-.hidden {
-	width: 5.5%;
 }
 
 .side-container {
 	display: flex;
 	flex-direction: column;
 	padding: 0.5rem;
+
+	.active {
+		background-color: $clr-active;
+	}
 
 	.side-item {
 		color: $clr-secondary;

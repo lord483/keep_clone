@@ -1,10 +1,19 @@
-import React from "react";
+import React, { createRef, useEffect, useRef } from "react";
 import { SidebarData } from "../../assets/local-data";
 import "./sidebar.css";
 
 const Sidebar = ({ setIsSidebarOpen, IsSidebarOpen }) => {
 	return (
-		<div className={IsSidebarOpen ? "main-container" : "hidden main-container"}>
+		<div
+			className="main-container"
+			style={
+				IsSidebarOpen
+					? { width: "25%", transition: "width 100ms ease-in-out" }
+					: { width: "5.5%", transition: "width 100ms ease-in-out" }
+			}
+			onMouseEnter={() => setIsSidebarOpen(true)}
+			onMouseLeave={() => setIsSidebarOpen(false)}
+		>
 			<ul className="side-container">
 				{SidebarData.map((data, index) => {
 					const { icon, label } = data;
