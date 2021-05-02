@@ -1,0 +1,129 @@
+$clr-primary: #202124;
+$clr-lightgrey: #525356;
+$clr-secondary: #999999;
+$clr-logo: #e2e2e2;
+
+* {
+	margin: 0;
+	padding: 0;
+	box-sizing: border-box;
+}
+
+body {
+	background-color: $clr-primary;
+}
+
+nav {
+	padding: 0.4rem 0.5rem;
+	margin-top: 8px;
+	margin: auto;
+	align-items: center;
+	display: flex;
+	align-items: center;
+	border-bottom: 1px solid $clr-lightgrey;
+
+	.menu-icon {
+		display: flex;
+		align-items: center;
+		justify-content: center;
+		color: $clr-logo;
+		margin: auto;
+		height: 45px;
+		width: 75px;
+		font-size: 1.5rem;
+		padding: 0.125rem;
+		border: 1px solid transparent;
+		border-radius: 50%;
+		cursor: pointer;
+		transition: all 100ms ease-in;
+
+		svg {
+			pointer-events: none;
+		}
+		:hover,
+		:focus-visible,
+		:focus {
+			background-color: #303235;
+		}
+	}
+
+	img {
+		margin: 0.3rem;
+		width: 40px;
+		height: 40px;
+	}
+
+	h2 {
+		color: $clr-logo;
+		display: inline-block;
+		margin-top: 0.1rem;
+		padding: 0.1rem;
+		font-weight: normal;
+	}
+
+	form {
+		width: 100%;
+		position: relative;
+		display: flex;
+		padding-left: 6.5rem;
+		padding-right: 2rem;
+
+		.icon-container {
+			position: relative;
+			padding: 10px;
+			height: 46px;
+			border-radius: 8px 0 0 8px;
+			background-color: $clr-lightgrey;
+			color: $clr-secondary;
+			align-items: center;
+			.search-icon {
+				font-size: 1.75rem;
+				color: $clr-logo;
+			}
+		}
+
+		input {
+			width: 100%;
+			height: 46px;
+			border-radius: 0 8px 8px 0;
+			border: 1px solid transparent;
+			color: $clr-logo;
+			background-color: $clr-lightgrey;
+			transition: background-color 100ms ease-in;
+		}
+
+		:focus-visible {
+			background-color: $clr-logo;
+			color: $clr-lightgrey;
+		}
+	}
+
+	.dark-icon-container {
+		display: flex;
+
+		.dark-icon {
+			display: flex;
+			align-items: center;
+			justify-content: center;
+			color: $clr-secondary;
+			margin: auto 15px;
+			height: 46px;
+			width: 46px;
+			font-size: 1.5rem;
+			padding: auto;
+			border: 1px solid transparent;
+			border-radius: 50%;
+			cursor: pointer;
+			transition: all 100ms ease-in;
+			svg {
+				pointer-events: none;
+			}
+		}
+		:hover,
+		:focus-visible,
+		:focus {
+			background-color: #303235;
+			color: $clr-logo;
+		}
+	}
+}

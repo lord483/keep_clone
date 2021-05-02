@@ -1,0 +1,76 @@
+* {
+  margin: 0;
+  padding: 0;
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+}
+
+.main-container {
+  border-right: 1px solid #525356;
+  width: 25%;
+  overflow: hidden;
+  white-space: nowrap;
+  height: calc(100vh - 63px);
+}
+
+.hidden {
+  width: 5.5%;
+}
+
+.side-container {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  padding: 0.5rem;
+}
+
+.side-container .side-item {
+  color: #999999;
+  display: -webkit-inline-box;
+  display: -ms-inline-flexbox;
+  display: inline-flex;
+  padding: 0.75rem;
+  padding-left: 0;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  height: 3rem;
+  width: 265px;
+  cursor: pointer;
+  border-radius: 100px;
+  -webkit-transition: background-color 100ms ease-in;
+  transition: background-color 100ms ease-in;
+}
+
+.side-container .side-item h4 {
+  margin-left: 1rem;
+  color: #e2e2e2;
+  font-weight: 500;
+  pointer-events: none;
+}
+
+.side-container .side-item svg {
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  width: 46px;
+  height: 46px;
+  padding: 8px;
+  padding-left: 6px;
+  border-radius: 48%;
+}
+
+.side-container .side-item :hover {
+  background-color: #525356;
+}
+
+.side-container :hover,
+.side-container :focus-visible,
+.side-container :focus {
+  background-color: #525356;
+}
+/*# sourceMappingURL=sidebar.css.map */
