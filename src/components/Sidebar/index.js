@@ -1,4 +1,4 @@
-import React, { createRef, useEffect, useRef } from "react";
+import React from "react";
 import { SidebarData } from "../../assets/local-data";
 import "./sidebar.css";
 
