@@ -6,15 +6,11 @@
 }
 
 .main-container {
-  border-right: 1px solid #525356;
-  width: 25%;
+  -webkit-box-shadow: 5px 0 15px 0 rgba(0, 0, 0, 0.3);
+          box-shadow: 5px 0 15px 0 rgba(0, 0, 0, 0.3);
   overflow: hidden;
   white-space: nowrap;
   height: calc(100vh - 63px);
-}
-
-.hidden {
-  width: 5.5%;
 }
 
 .side-container {
@@ -28,6 +24,10 @@
   padding: 0.5rem;
 }
 
+.side-container .active {
+  background-color: #41331c;
+}
+
 .side-container .side-item {
   color: #999999;
   display: -webkit-inline-box;
@@ -38,6 +38,7 @@
   -webkit-box-align: center;
       -ms-flex-align: center;
           align-items: center;
+  text-decoration: none;
   height: 3rem;
   width: 265px;
   cursor: pointer;

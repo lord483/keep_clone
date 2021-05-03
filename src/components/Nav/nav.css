@@ -117,6 +117,7 @@ nav .dark-icon-container {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
+  position: relative;
 }
 
 nav .dark-icon-container .dark-icon {
@@ -135,21 +136,41 @@ nav .dark-icon-container .dark-icon {
   width: 46px;
   font-size: 1.5rem;
   padding: auto;
-  border: 1px solid transparent;
   border-radius: 50%;
   cursor: pointer;
   -webkit-transition: all 100ms ease-in;
   transition: all 100ms ease-in;
 }
 
-nav .dark-icon-container .dark-icon svg {
+nav .dark-icon-container ::before {
+  content: "";
+  display: block;
+  position: absolute;
+  background-color: transparent;
+  width: 46px;
+  height: 46px;
+  border-radius: 50%;
+  -webkit-box-shadow: 0 0 20px rgba(0, 0, 0, 0.6);
+          box-shadow: 0 0 20px rgba(0, 0, 0, 0.6);
+  opacity: 0;
+  margin: 10px;
+  z-index: 2;
+  -webkit-transition: opacity 150ms ease-in;
+  transition: opacity 150ms ease-in;
+}
+
+nav .dark-icon-container :hover::before {
+  opacity: 1;
+}
+
+nav .dark-icon-container svg {
   pointer-events: none;
 }
 
 nav .dark-icon-container :hover,
 nav .dark-icon-container :focus-visible,
 nav .dark-icon-container :focus {
-  background-color: #303235;
+  background-color: rgba(0, 0, 0, 0.25);
   color: #e2e2e2;
 }
 /*# sourceMappingURL=nav.css.map */

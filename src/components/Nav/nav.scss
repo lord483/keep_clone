@@ -100,6 +100,7 @@ nav {
 
 	.dark-icon-container {
 		display: flex;
+		position: relative;
 
 		.dark-icon {
 			display: flex;
@@ -111,18 +112,36 @@ nav {
 			width: 46px;
 			font-size: 1.5rem;
 			padding: auto;
-			border: 1px solid transparent;
 			border-radius: 50%;
 			cursor: pointer;
 			transition: all 100ms ease-in;
-			svg {
-				pointer-events: none;
-			}
+		}
+
+		::before {
+			content: "";
+			display: block;
+			position: absolute;
+			background-color: transparent;
+			width: 46px;
+			height: 46px;
+			border-radius: 50%;
+			box-shadow: 0 0 20px rgba(0, 0, 0, 0.6);
+			opacity: 0;
+			margin: 10px;
+			z-index: 2;
+			transition: opacity 150ms ease-in;
+		}
+		:hover::before {
+			opacity: 1;
+		}
+
+		svg {
+			pointer-events: none;
 		}
 		:hover,
 		:focus-visible,
 		:focus {
-			background-color: #303235;
+			background-color: rgba(0, 0, 0, 0.25);
 			color: $clr-logo;
 		}
 	}

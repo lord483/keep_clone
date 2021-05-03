@@ -19,14 +19,33 @@ const SidebarData = [
 	{
 		icon: <AiOutlineBulb />,
 		label: "Notes",
+		path: "/",
+		// page = <Notes />
 	},
-	{ icon: <AiOutlineBell />, label: "Reminders" },
+	{
+		icon: <AiOutlineBell />,
+		label: "Reminders",
+		path: "/reminder",
+		// page = <Reminders />
+	},
 	{
 		icon: <AiOutlineEdit />,
 		label: "Edit Labels",
+		path: "/labels",
+		// page: <Labels />
 	},
-	{ icon: <BiArchiveIn />, label: "Archive" },
-	{ icon: <BiTrashAlt />, label: "Trash" },
+	{
+		icon: <BiArchiveIn />,
+		label: "Archive",
+		path: "/archive",
+		// page: <Archive />
+	},
+	{
+		icon: <BiTrashAlt />,
+		label: "Trash",
+		path: "/trash",
+		// page: <Trash />
+	},
 ];
 
 export { Icons, SidebarData };
