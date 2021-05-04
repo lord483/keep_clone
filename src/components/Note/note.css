@@ -1,0 +1,34 @@
+* {
+  margin: 0;
+  padding: 0;
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+}
+
+.container {
+  color: #e2e2e2;
+  display: -webkit-inline-box;
+  display: -ms-inline-flexbox;
+  display: inline-flex;
+  -ms-flex-wrap: wrap;
+      flex-wrap: wrap;
+}
+
+.container .note-container {
+  min-width: 250px;
+  width: 250px;
+  border: 2px solid #999999;
+  border-radius: 8px;
+  margin: 30px 20px;
+  padding: 1rem;
+}
+
+.container .note-container .note-title {
+  margin: auto auto 15px auto;
+}
+
+.container .note-container .note-detail {
+  margin: auto auto 50px 0;
+  width: 75%;
+}
+/*# sourceMappingURL=Note.css.map */

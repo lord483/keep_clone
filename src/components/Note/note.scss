@@ -1,0 +1,33 @@
+$clr-primary: #202124;
+$clr-lightgrey: #525356;
+$clr-secondary: #999999;
+$clr-white: #e2e2e2;
+
+* {
+	margin: 0;
+	padding: 0;
+	box-sizing: border-box;
+}
+
+.container {
+	color: $clr-white;
+	display: inline-flex;
+	flex-wrap: wrap;
+
+	.note-container {
+		min-width: 250px;
+		width: 250px;
+
+		border: 2px solid $clr-secondary;
+		border-radius: 8px;
+		margin: 30px 20px;
+		padding: 1rem;
+		.note-title {
+			margin: auto auto 15px auto;
+		}
+		.note-detail {
+			margin: auto auto 50px 0;
+			width: 75%;
+		}
+	}
+}

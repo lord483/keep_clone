@@ -11,10 +11,13 @@ $clr-active: #41331c;
 }
 
 .main-container {
+	position: relative;
 	box-shadow: 5px 0 15px 0 rgba(0, 0, 0, 0.3);
 	overflow: hidden;
 	white-space: nowrap;
 	height: calc(100vh - 63px);
+	z-index: 2;
+	background-color: $clr-primary;
 }
 
 .side-container {
@@ -54,13 +57,10 @@ $clr-active: #41331c;
 			padding-left: 6px;
 			border-radius: 48%;
 		}
-		:hover {
+		:hover,
+		:focus-visible,
+		:focus {
 			background-color: $clr-lightgrey;
 		}
-	}
-	:hover,
-	:focus-visible,
-	:focus {
-		background-color: $clr-lightgrey;
 	}
 }

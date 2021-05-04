@@ -2,10 +2,26 @@ import {
 	IoRefreshOutline,
 	IoListSharp,
 	IoSettingsOutline,
+	IoPersonAddOutline,
+	IoColorPaletteOutline,
+	// IoMdCheckboxOutline,
 } from "react-icons/io5";
 
-import { AiOutlineBulb, AiOutlineBell, AiOutlineEdit } from "react-icons/ai";
-import { BiArchiveIn, BiTrashAlt } from "react-icons/bi";
+import {
+	AiOutlineBulb,
+	AiOutlineBell,
+	AiOutlineEdit,
+	AiOutlinePushpin,
+} from "react-icons/ai";
+import {
+	BiArchiveIn,
+	BiTrashAlt,
+	BiBellPlus,
+	BiImageAlt,
+	BiDotsVerticalRounded,
+	BiUndo,
+	BiRedo,
+} from "react-icons/bi";
 
 // nav icons
 const Icons = [
@@ -48,4 +64,16 @@ const SidebarData = [
 	},
 ];
 
-export { Icons, SidebarData };
+const NoteIcons = [
+	{ icon: <AiOutlinePushpin /> },
+	{ icon: <BiBellPlus /> },
+	{ icon: <IoPersonAddOutline /> },
+	{ icon: <IoColorPaletteOutline /> },
+	{ icon: <BiImageAlt /> },
+	{ icon: <BiArchiveIn /> },
+	{ icon: <BiDotsVerticalRounded /> },
+	{ icon: <BiUndo /> },
+	{ icon: <BiRedo /> },
+];
+
+export { Icons, SidebarData, NoteIcons };

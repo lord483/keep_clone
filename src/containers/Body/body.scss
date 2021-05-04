@@ -1,0 +1,21 @@
+$clr-primary: #202124;
+$clr-lightgrey: #525356;
+$clr-secondary: #999999;
+$clr-logo: #e2e2e2;
+$clr-active: #41331c;
+
+* {
+	margin: 0;
+	padding: 0;
+	box-sizing: border-box;
+}
+
+.body-container {
+	display: inline-block;
+	position: absolute;
+	width: calc(100% - 61px);
+	height: calc(100% - 63px);
+	top: 63px;
+	left: 61px;
+	background-color: $clr-primary;
+}

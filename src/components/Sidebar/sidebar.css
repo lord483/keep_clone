@@ -6,11 +6,14 @@
 }
 
 .main-container {
+  position: relative;
   -webkit-box-shadow: 5px 0 15px 0 rgba(0, 0, 0, 0.3);
           box-shadow: 5px 0 15px 0 rgba(0, 0, 0, 0.3);
   overflow: hidden;
   white-space: nowrap;
   height: calc(100vh - 63px);
+  z-index: 2;
+  background-color: #202124;
 }
 
 .side-container {
@@ -65,13 +68,9 @@
   border-radius: 48%;
 }
 
-.side-container .side-item :hover {
-  background-color: #525356;
-}
-
-.side-container :hover,
-.side-container :focus-visible,
-.side-container :focus {
+.side-container .side-item :hover,
+.side-container .side-item :focus-visible,
+.side-container .side-item :focus {
   background-color: #525356;
 }
 /*# sourceMappingURL=sidebar.css.map */

@@ -2,6 +2,7 @@ import { useState } from "react";
 // import { Switch, Route } from "react-router-dom";
 import Nav from "./components/Nav";
 import Sidebar from "./components/Sidebar";
+import Body from "./containers/Body";
 import "./App.css";
 
 function App() {
@@ -13,6 +14,7 @@ function App() {
 				setIsSidebarOpen={setIsSidebarOpen}
 				IsSidebarOpen={IsSidebarOpen}
 			/>
+			<Body />
 		</main>
 	);
 }
