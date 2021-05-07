@@ -1,9 +1,15 @@
-import React, { useState } from "react";
-import { notes } from "../../assets/temp-notes";
+import React from "react";
+import { useGlobalContext } from "../../context/context";
 import "./note.css";
 
 const Note = () => {
-	const [isNoteOpen, setIsNoteOpen] = useState(false);
+	const {
+		// setIsNoteOpen,
+		// isNoteOpen,
+		// isListEmpty,
+		// setIsListEmpty,
+		notes,
+	} = useGlobalContext();
 
 	return notes.map((note, index) => {
 		const { title, detail } = note;
@@ -12,25 +18,19 @@ const Note = () => {
 				className="container"
 				id={index}
 				key={index}
-				onClick={() => setIsNoteOpen(!isNoteOpen)}
+				// onClick={() => setIsNoteOpen(!isNoteOpen)}
 			>
-				<NoteContainer title={title} detail={detail} index={index} />
+				<div className="note-container">
+					<div className="note-title">
+						<h4>{title}</h4>
+					</div>
+					<div className="note-detail">
+						<p>{detail}</p>
+					</div>
+				</div>
 			</div>
 		);
 	});
-};
-
-const NoteContainer = ({ title, detail, index }) => {
-	return (
-		<div className="note-container" id={index}>
-			<div className="note-title">
-				<h4>{title}</h4>
-			</div>
-			<div className="note-detail">
-				<p>{detail}</p>
-			</div>
-		</div>
-	);
 };
 
 export default Note;

@@ -4,16 +4,11 @@ $clr-secondary: #999999;
 $clr-logo: #e2e2e2;
 $clr-active: #41331c;
 
-* {
-	margin: 0;
-	padding: 0;
-	box-sizing: border-box;
-}
-
 .main-container {
 	position: relative;
 	box-shadow: 5px 0 15px 0 rgba(0, 0, 0, 0.3);
 	overflow: hidden;
+	width: 60px;
 	white-space: nowrap;
 	height: calc(100vh - 63px);
 	z-index: 2;
@@ -27,12 +22,18 @@ $clr-active: #41331c;
 
 	.active {
 		background-color: $clr-active;
+
+		:hover {
+			background-color: $clr-active !important;
+		}
+		svg {
+			background-color: $clr-active;
+		}
 	}
 
 	.side-item {
 		color: $clr-secondary;
 		display: inline-flex;
-		padding: 0.75rem;
 		padding-left: 0;
 		align-items: center;
 		text-decoration: none;
@@ -57,9 +58,7 @@ $clr-active: #41331c;
 			padding-left: 6px;
 			border-radius: 48%;
 		}
-		:hover,
-		:focus-visible,
-		:focus {
+		:hover {
 			background-color: $clr-lightgrey;
 		}
 	}

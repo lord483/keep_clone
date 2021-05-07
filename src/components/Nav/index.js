@@ -4,8 +4,10 @@ import { IoMenuSharp } from "react-icons/io5";
 import { Icons } from "../../assets/local-data";
 import { AiOutlineSearch } from "react-icons/ai";
 import logo from "../../assets/keep_icon.png";
+import { useGlobalContext } from "../../context/context";
 
-const Nav = ({ setIsSidebarOpen, IsSidebarOpen }) => {
+const Nav = () => {
+	const { IsSidebarOpen, setIsSidebarOpen } = useGlobalContext();
 	return (
 		<main>
 			<nav>

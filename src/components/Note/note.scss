@@ -3,12 +3,6 @@ $clr-lightgrey: #525356;
 $clr-secondary: #999999;
 $clr-white: #e2e2e2;
 
-* {
-	margin: 0;
-	padding: 0;
-	box-sizing: border-box;
-}
-
 .container {
 	color: $clr-white;
 	display: inline-flex;

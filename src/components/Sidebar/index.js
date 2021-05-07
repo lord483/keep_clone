@@ -1,26 +1,34 @@
 import React from "react";
 import { BrowserRouter as Router, Link } from "react-router-dom";
-import { SidebarData } from "../../assets/local-data";
+import { useGlobalContext } from "../../context/context";
 import "./sidebar.css";
 
-const Sidebar = ({ setIsSidebarOpen, IsSidebarOpen }) => {
+const Sidebar = () => {
+	const {
+		setIsSidebarOpen,
+		activeId,
+		setActiveId,
+		sidebarStyles,
+		SidebarData,
+	} = useGlobalContext();
+
 	return (
-		<Router>
-			<div
-				className="main-container"
-				style={
-					IsSidebarOpen
-						? { width: "275px", transition: "width 100ms ease-in-out" }
-						: { width: "60px", transition: "width 100ms ease-in-out" }
-				}
-				onMouseEnter={() => setIsSidebarOpen(true)}
-				onMouseLeave={() => setIsSidebarOpen(false)}
-			>
+		<div
+			className="main-container"
+			style={sidebarStyles}
+			onMouseEnter={() => setIsSidebarOpen(true)}
+			onMouseLeave={() => setIsSidebarOpen(false)}
+		>
+			<Router>
 				<ul className="side-container">
 					{SidebarData.map((data, index) => {
-						const { icon, path, label } = data;
+						const { icon, path, id, label } = data;
 						return (
-							<li className="side-item" key={index}>
+							<li
+								className={`side-item ${id === activeId && "active"}`}
+								key={index}
+								onClick={() => setActiveId(id)}
+							>
 								<Link to={path} className="side-item">
 									{icon} <h4>{label}</h4>
 								</Link>
@@ -28,8 +36,8 @@ const Sidebar = ({ setIsSidebarOpen, IsSidebarOpen }) => {
 						);
 					})}
 				</ul>
-			</div>
-		</Router>
+			</Router>
+		</div>
 	);
 };
 

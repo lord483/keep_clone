@@ -1,20 +1,31 @@
-import { useState } from "react";
-// import { Switch, Route } from "react-router-dom";
-import Nav from "./components/Nav";
-import Sidebar from "./components/Sidebar";
-import Body from "./containers/Body";
+import React from "react";
+import { BrowserRouter as Router, Route, Switch } from "react-router-dom";
+
+import Notes from "./containers/Notes";
 import "./App.css";
 
 function App() {
-	const [IsSidebarOpen, setIsSidebarOpen] = useState(false);
 	return (
 		<main>
-			<Nav setIsSidebarOpen={setIsSidebarOpen} IsSidebarOpen={IsSidebarOpen} />
-			<Sidebar
-				setIsSidebarOpen={setIsSidebarOpen}
-				IsSidebarOpen={IsSidebarOpen}
-			/>
-			<Body />
+			<Router>
+				<Switch>
+					<Route path="/" exact={true}>
+						<Notes />
+					</Route>
+					{/*		<Route path="/reminder">
+						<Reminder />
+					</Route>
+				 	<Route path="/label">
+						<Label />
+					</Route>
+					<Route path="/archive">
+						<Archive />
+					</Route>
+					<Route path="/trash">
+						<Trash />
+					</Route> */}
+				</Switch>
+			</Router>
 		</main>
 	);
 }
