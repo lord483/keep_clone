@@ -8,11 +8,14 @@ const Note = () => {
 		// isNoteOpen,
 		// isListEmpty,
 		// setIsListEmpty,
-		notes,
+		notesList,
+		// notes,
 	} = useGlobalContext();
+	// console.log(notesList);
 
-	return notes.map((note, index) => {
+	return notesList.map((note, index) => {
 		const { title, detail } = note;
+
 		return (
 			<div
 				className="container"
