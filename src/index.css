@@ -16,16 +16,36 @@ body {
 .page-container {
 	position: absolute;
 	top: 70px;
-	left: 65px;
+	left: 61px;
+	width: calc(100vw - 50px);
+	height: calc(100% - 100px);
 	background-color: #202124;
+	color: #535353;
 	width: calc(100vw - 78px);
 }
 
 .page-icon-container {
-	display: flex;
-	flex-direction: column;
-	height: 90vh;
-	width: 90%;
+	display: inline-block;
+	position: relative;
+	left: 50%;
+	top: 50%;
+	margin: auto;
+	padding: 1rem;
+	text-align: center;
+	transform: translate(-50%, -50%);
+}
+
+.page-icon-container svg {
+	font-size: 10rem;
+	font-weight: 200;
+}
+
+.page-icon-container h2 {
+	align-items: center;
+	font-size: 1.5rem;
+	font-weight: 400;
+	width: 100%;
+	margin: auto;
 }
 
 .empty-subtitle {

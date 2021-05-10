@@ -5,13 +5,16 @@ $clr-white: #e2e2e2;
 
 .container {
 	color: $clr-white;
+	position: relative;
+	top: 0.1%;
+	left: 0.1%;
 	display: inline-flex;
+
 	flex-wrap: wrap;
 
 	.note-container {
 		min-width: 250px;
 		width: 250px;
-
 		border: 2px solid $clr-secondary;
 		border-radius: 8px;
 		margin: 30px 20px;

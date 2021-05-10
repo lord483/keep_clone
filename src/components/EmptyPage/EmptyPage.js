@@ -3,12 +3,12 @@ import { useGlobalContext } from "../../context/context";
 
 const EmptyPage = () => {
 	const { SidebarData, activeId } = useGlobalContext();
-	const { icon } = SidebarData[activeId];
+	const { icon, subTitle } = SidebarData[activeId];
 
 	return (
 		<div className="page-icon-container">
 			{icon}
-			<h2 className="empty-subtitle">Note you add appear here</h2>
+			<h2 className="empty-subtitle">{subTitle}</h2>
 		</div>
 	);
 };

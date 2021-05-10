@@ -1,0 +1,19 @@
+$clr-primary: #202124;
+$clr-lightgrey: #525356;
+$clr-secondary: #999999;
+$clr-logo: #e2e2e2;
+
+.exp-note-container {
+	z-index: 5;
+	position: absolute;
+	top: 20%;
+	left: 50%;
+	padding: 2rem;
+	margin: auto;
+	width: 70%;
+	height: 70%;
+	background-color: rgba(0, 0, 0, 0.3);
+	color: $clr-logo;
+	transform: translate(-50%);
+	border-radius: 8px;
+}

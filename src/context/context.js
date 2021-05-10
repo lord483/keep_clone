@@ -1,6 +1,5 @@
 import React, { useContext, useState, useEffect } from "react";
 import { SidebarData } from "../assets/local-data";
-import { notes } from "../assets/temp-notes";
 
 const AppContext = React.createContext();
 
@@ -14,18 +13,18 @@ const AppProvider = ({ children }) => {
 	const [activeId, setActiveId] = useState(0);
 	const [isListEmpty, setIsListEmpty] = useState(true);
 	const [notesList, setNotesList] = useState([]);
-	const url = "http://localhost:5000/api";
+	const [id, set_id] = useState(0);
 
 	const fetchData = async () => {
 		setLoading(true);
 		try {
-			const response = await fetch(url);
+			const response = await fetch("/api");
 			const data = await response.json();
 			if (data) {
 				setIsListEmpty(false);
 				const newNotes = data.map((note) => {
-					const { title, detail } = note;
-					return { title, detail };
+					const { _id, title, detail } = note;
+					return { _id, title, detail };
 				});
 				setNotesList(newNotes);
 			} else {
@@ -47,13 +46,13 @@ const AppProvider = ({ children }) => {
 		transition: "width 100ms ease-in-out",
 	};
 
-	// useEffect(() => {
-	// 	if (notesList.length === 0) {
-	// 		setIsListEmpty(true);
-	// 	} else {
-
-	// 	}
-	// }, [isListEmpty]);
+	useEffect(() => {
+		if (notesList.length === 0) {
+			setIsListEmpty(true);
+		} else {
+			setIsListEmpty(false);
+		}
+	}, [isListEmpty, notesList.length]);
 
 	useEffect(() => {
 		if (isSidebarOpen) {
@@ -70,15 +69,16 @@ const AppProvider = ({ children }) => {
 				setIsSidebarOpen,
 				setActiveId,
 				setIsListEmpty,
+				set_id,
 				isListEmpty,
 				isNoteOpen,
 				isSidebarOpen,
 				activeId,
 				sidebarStyles,
 				SidebarData,
-				notes,
 				loading,
 				notesList,
+				id,
 			}}
 		>
 			{children}

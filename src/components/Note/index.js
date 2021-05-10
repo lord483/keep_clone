@@ -3,15 +3,12 @@ import { useGlobalContext } from "../../context/context";
 import "./note.css";
 
 const Note = () => {
-	const {
-		// setIsNoteOpen,
-		// isNoteOpen,
-		// isListEmpty,
-		// setIsListEmpty,
-		notesList,
-		// notes,
-	} = useGlobalContext();
-	// console.log(notesList);
+	const { setIsNoteOpen, isNoteOpen, notesList, set_id } = useGlobalContext();
+
+	const idSetter = (e, index) => {
+		e.preventDefault();
+		set_id(notesList[index]._id);
+	};
 
 	return notesList.map((note, index) => {
 		const { title, detail } = note;
@@ -21,8 +18,12 @@ const Note = () => {
 				className="container"
 				id={index}
 				key={index}
-				// onClick={() => setIsNoteOpen(!isNoteOpen)}
+				onClick={(e) => {
+					idSetter(e, index);
+					setIsNoteOpen(!isNoteOpen);
+				}}
 			>
+				<div className="container"></div>
 				<div className="note-container">
 					<div className="note-title">
 						<h4>{title}</h4>
