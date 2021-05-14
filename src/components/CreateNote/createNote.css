@@ -1,0 +1,111 @@
+.create-form-container {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  position: relative;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  padding: 0.6rem 0.5rem;
+  margin: auto;
+  max-width: 55%;
+  min-width: 650px;
+  height: auto;
+  border: 1px solid #999999;
+  border-radius: 8px;
+  width: auto;
+}
+
+.create-form-container .form-container {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  height: auto;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  margin-bottom: 1rem;
+}
+
+.create-form-container .form-container .title-input,
+.create-form-container .form-container .textarea {
+  background-color: #202124;
+  border: none;
+  margin: auto 1.5rem;
+  color: #e2e2e2;
+  font-size: 1rem;
+}
+
+.create-form-container .form-container .title-input {
+  border-bottom: 1px solid #525356;
+  margin-bottom: 5px;
+  height: 40px;
+}
+
+.create-form-container .form-container .textarea {
+  height: 60px;
+  padding-top: 5px;
+}
+
+.create-form-container .form-container :focus-visible {
+  outline: none;
+}
+
+.create-form-container .form-btn {
+  position: relative;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  list-style-type: none;
+  margin: auto;
+  margin-bottom: 0.25rem;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+.create-form-container .form-btn .new-note-btn {
+  color: #e2e2e2;
+  background-color: #525356;
+  height: 30px;
+  width: 70px;
+  border-radius: 8px;
+  text-align: center;
+  padding: 0.25rem 0.5rem;
+  cursor: pointer;
+}
+
+.create-form-container .form-btn .icon-item {
+  position: relative;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  color: #999999;
+  border-radius: 50%;
+  margin: 0.5rem;
+  padding: auto;
+  height: 40px;
+  width: 40px;
+  font-size: 1.5rem;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  cursor: pointer;
+  -webkit-transition: background-color 100ms ease-in;
+  transition: background-color 100ms ease-in;
+}
+
+.create-form-container .form-btn .icon-item svg {
+  pointer-events: none;
+}
+
+.create-form-container .form-btn :hover,
+.create-form-container .form-btn :focus-visible {
+  background-color: #525356;
+}
+/*# sourceMappingURL=createNote.css.map */

@@ -70,6 +70,8 @@ const AppProvider = ({ children }) => {
 				setActiveId,
 				setIsListEmpty,
 				set_id,
+				fetchData,
+				setNotesList,
 				isListEmpty,
 				isNoteOpen,
 				isSidebarOpen,

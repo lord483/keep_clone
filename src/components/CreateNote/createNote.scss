@@ -1,0 +1,95 @@
+$clr-primary: #202124;
+$clr-lightgrey: #525356;
+$clr-secondary: #999999;
+$clr-logo: #e2e2e2;
+$clr-active: #41331c;
+
+.create-form-container {
+	display: flex;
+	position: relative;
+	flex-direction: column;
+	padding: 0.6rem 0.5rem;
+	margin: auto;
+	max-width: 55%;
+	min-width: 650px;
+	height: auto;
+
+	border: 1px solid $clr-secondary;
+	border-radius: 8px;
+
+	width: auto;
+
+	.form-container {
+		display: flex;
+		height: auto;
+		flex-direction: column;
+		margin-bottom: 1rem;
+		.title-input,
+		.textarea {
+			background-color: $clr-primary;
+			border: none;
+			margin: auto 1.5rem;
+			color: $clr-logo;
+			font-size: 1rem;
+		}
+
+		.title-input {
+			// border-bottom: none;
+			border-bottom: 1px solid $clr-lightgrey;
+			margin-bottom: 5px;
+			height: 40px;
+		}
+
+		.textarea {
+			height: 60px;
+			padding-top: 5px;
+		}
+
+		:focus-visible {
+			outline: none;
+		}
+	}
+	.form-btn {
+		position: relative;
+		display: flex;
+		list-style-type: none;
+		margin: auto;
+		margin-bottom: 0.25rem;
+		align-items: center;
+
+		.new-note-btn {
+			color: $clr-logo;
+			background-color: $clr-lightgrey;
+			height: 30px;
+			width: 70px;
+			border-radius: 8px;
+			text-align: center;
+			padding: 0.25rem 0.5rem;
+			cursor: pointer;
+		}
+
+		.icon-item {
+			position: relative;
+			display: flex;
+			color: $clr-secondary;
+			border-radius: 50%;
+			margin: 0.5rem;
+			padding: auto;
+			height: 40px;
+			width: 40px;
+			font-size: 1.5rem;
+			justify-content: center;
+			align-items: center;
+			cursor: pointer;
+			transition: background-color 100ms ease-in;
+
+			svg {
+				pointer-events: none;
+			}
+		}
+		:hover,
+		:focus-visible {
+			background-color: $clr-lightgrey;
+		}
+	}
+}

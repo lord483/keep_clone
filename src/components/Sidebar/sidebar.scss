@@ -5,13 +5,11 @@ $clr-logo: #e2e2e2;
 $clr-active: #41331c;
 
 .main-container {
-	position: relative;
+	display: inline-block;
 	box-shadow: 5px 0 15px 0 rgba(0, 0, 0, 0.3);
 	overflow: hidden;
 	width: 60px;
-	white-space: nowrap;
-	height: calc(100vh - 63px);
-	z-index: 2;
+	height: 100vh;
 	background-color: $clr-primary;
 }
 

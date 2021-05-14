@@ -75,7 +75,6 @@ const SidebarData = [
 ];
 
 const NoteIcons = [
-	{ icon: <AiOutlinePushpin /> },
 	{ icon: <BiBellPlus /> },
 	{ icon: <IoPersonAddOutline /> },
 	{ icon: <IoColorPaletteOutline /> },
@@ -84,6 +83,7 @@ const NoteIcons = [
 	{ icon: <BiDotsVerticalRounded /> },
 	{ icon: <BiUndo /> },
 	{ icon: <BiRedo /> },
+	{ icon: <AiOutlinePushpin /> },
 ];
 
 export { Icons, SidebarData, NoteIcons };
