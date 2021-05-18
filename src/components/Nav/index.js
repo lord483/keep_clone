@@ -9,22 +9,20 @@ import { useGlobalContext } from "../../context/context";
 const Nav = () => {
 	const { IsSidebarOpen, setIsSidebarOpen } = useGlobalContext();
 	return (
-		<main>
-			<nav>
-				<div
-					className="menu-icon"
-					onClick={() => setIsSidebarOpen(!IsSidebarOpen)}
-				>
-					<IoMenuSharp />
-				</div>
-				<img src={logo} alt="logo" />
-				<h2>Keep</h2>
-				<Search className="search-form" />
-				<div className="dark-icon-container">
-					<Icon />
-				</div>
-			</nav>
-		</main>
+		<nav>
+			<div
+				className="menu-icon"
+				onClick={() => setIsSidebarOpen(!IsSidebarOpen)}
+			>
+				<IoMenuSharp />
+			</div>
+			<img src={logo} alt="logo" />
+			<h2>Keep</h2>
+			<Search className="search-form" />
+			<div className="dark-icon-container">
+				<Icon />
+			</div>
+		</nav>
 	);
 };
 

@@ -1,10 +1,12 @@
 .main-container {
   display: inline-block;
+  position: relative;
   -webkit-box-shadow: 5px 0 15px 0 rgba(0, 0, 0, 0.3);
           box-shadow: 5px 0 15px 0 rgba(0, 0, 0, 0.3);
   overflow: hidden;
   width: 60px;
   height: 100vh;
+  z-index: 10;
   background-color: #202124;
 }
 

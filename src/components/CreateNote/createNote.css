@@ -7,11 +7,11 @@
   -webkit-box-direction: normal;
       -ms-flex-direction: column;
           flex-direction: column;
-  padding: 0.6rem 0.5rem;
+  overflow: hidden;
+  padding: 0.3rem 0.5rem;
   margin: auto;
-  max-width: 55%;
+  max-width: 650px;
   min-width: 650px;
-  height: auto;
   border: 1px solid #999999;
   border-radius: 8px;
   width: auto;
@@ -39,7 +39,6 @@
 }
 
 .create-form-container .form-container .title-input {
-  border-bottom: 1px solid #525356;
   margin-bottom: 5px;
   height: 40px;
 }
@@ -71,9 +70,9 @@
   background-color: #525356;
   height: 30px;
   width: 70px;
-  border-radius: 8px;
+  border-radius: 5px;
   text-align: center;
-  padding: 0.25rem 0.5rem;
+  padding: 0.13rem 0.5rem;
   cursor: pointer;
 }
 

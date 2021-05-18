@@ -1,37 +1,75 @@
-import React from "react";
+import React, { useState, useEffect } from "react";
 import { useGlobalContext } from "../../context/context";
+import IconContainer from "../IconContainer";
 import "./note.css";
 
 const Note = () => {
-	const { setIsNoteOpen, isNoteOpen, notesList, set_id } = useGlobalContext();
+	const { notesList } = useGlobalContext();
+	const [isNoteExpand, setIsNoteExpand] = useState(false);
+	const [selectedId, setSelectedId] = useState(0);
+	const [noteTitle, setNoteTitle] = useState("");
+	const [noteBody, setNoteBody] = useState("");
 
-	const idSetter = (e, index) => {
-		e.preventDefault();
-		set_id(notesList[index]._id);
+	useEffect(() => {
+		console.log(noteTitle, noteBody);
+	}, [noteTitle, noteBody]);
+
+	let data = {
+		query: { selectedId },
+		noteData: { title: noteTitle, detail: noteBody },
+	};
+
+	const putData = async () => {
+		try {
+			const response = await fetch("/api", {
+				method: "POST",
+				headers: {
+					Accept: "*/*",
+					"Content-Type": "application/json",
+				},
+				body: JSON.stringify(data),
+			});
+			return response.json();
+		} catch (error) {
+			console.error(error);
+		}
 	};
 
 	return notesList.map((note, index) => {
-		const { title, detail } = note;
+		const { _id, title, detail } = note;
 
 		return (
 			<div
-				className="container"
-				id={index}
+				className={
+					_id === selectedId && isNoteExpand
+						? "note-container expand"
+						: "note-container"
+				}
 				key={index}
-				onClick={(e) => {
-					idSetter(e, index);
-					setIsNoteOpen(!isNoteOpen);
+				id={_id}
+				onClick={() => {
+					setSelectedId(_id);
+					setIsNoteExpand(true);
+					setNoteTitle(title);
+					setNoteBody(detail);
 				}}
 			>
-				<div className="container"></div>
-				<div className="note-container">
-					<div className="note-title">
-						<h4>{title}</h4>
-					</div>
-					<div className="note-detail">
-						<p>{detail}</p>
-					</div>
-				</div>
+				<div
+					className="note-title"
+					onInput={(e) => console.log(e.target)}
+					contentEditable={_id === selectedId && isNoteExpand}
+					dangerouslySetInnerHTML={{
+						__html: `<h4>${isNoteExpand ? noteTitle : title}</h4>`,
+					}}
+				></div>
+				<div
+					className="note-detail"
+					onInput={(e) => console.log(e.target)}
+					contentEditable={_id === selectedId && isNoteExpand}
+					dangerouslySetInnerHTML={{
+						__html: `<p>${isNoteExpand ? noteBody : detail}</p>`,
+					}}
+				></div>
 			</div>
 		);
 	});

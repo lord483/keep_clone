@@ -5,21 +5,26 @@ import Sidebar from "../../components/Sidebar";
 import EmptyPage from "../../components/EmptyPage/EmptyPage";
 import CreateNote from "../../components/CreateNote";
 import "./notes.css";
-// import ExpandedNote from "../../components/expandedNote";
 import { useGlobalContext } from "../../context/context";
 
 const Notes = () => {
-	const { isListEmpty } = useGlobalContext();
+	const { isListEmpty, isNoteOpen } = useGlobalContext();
 
 	return (
-		<main>
-			<Nav />
-			<Sidebar />
-
-			<div className="page-container">
-				<CreateNote />
-				{isListEmpty ? <EmptyPage /> : <Note />}
-				{/* <ExpandedNote /> */}
+		<main className="page-body-container">
+			<div className="nav-panel">
+				<Nav />
+			</div>
+			<div className="main-body">
+				<div className="side-panel">
+					<Sidebar />
+				</div>
+				<div className="main-panel">
+					<CreateNote />
+					<div className="secondary-section">
+						{isListEmpty ? <EmptyPage /> : <Note />}
+					</div>
+				</div>
 			</div>
 		</main>
 	);

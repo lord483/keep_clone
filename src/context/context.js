@@ -14,6 +14,12 @@ const AppProvider = ({ children }) => {
 	const [isListEmpty, setIsListEmpty] = useState(true);
 	const [notesList, setNotesList] = useState([]);
 	const [id, set_id] = useState(0);
+	const [noteTitle, setNoteTitle] = useState("");
+	const [noteBody, setNoteBody] = useState("");
+	const [isFormExpanded, setIsFormExpanded] = useState(false);
+	const [placeHolder, setPlaceHolder] = useState("Take a Note...");
+	const [formHeight, setFormHeight] = useState("55px");
+	const [selectedId, setSelectedId] = useState(0);
 
 	const fetchData = async () => {
 		setLoading(true);
@@ -67,11 +73,17 @@ const AppProvider = ({ children }) => {
 			value={{
 				setIsNoteOpen,
 				setIsSidebarOpen,
+				setNoteTitle,
 				setActiveId,
+				setNoteBody,
 				setIsListEmpty,
+				setIsFormExpanded,
 				set_id,
+				setPlaceHolder,
 				fetchData,
+				setFormHeight,
 				setNotesList,
+				setSelectedId,
 				isListEmpty,
 				isNoteOpen,
 				isSidebarOpen,
@@ -81,6 +93,12 @@ const AppProvider = ({ children }) => {
 				loading,
 				notesList,
 				id,
+				noteTitle,
+				noteBody,
+				isFormExpanded,
+				placeHolder,
+				formHeight,
+				selectedId,
 			}}
 		>
 			{children}

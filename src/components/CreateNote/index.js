@@ -1,15 +1,38 @@
 import React, { useState, useEffect } from "react";
 import { useGlobalContext } from "../../context/context";
+import IconContainer from "../IconContainer";
 import "./createNote.css";
+import CreateUpdateForm from "../CreateUpdateForm";
 import { NoteIcons } from "../../assets/local-data";
 
 const CreateNote = () => {
-	const { setNotesList, isListEmpty, notesList } = useGlobalContext();
-	const [noteTitle, setNoteTitle] = useState("");
-	const [noteBody, setnoteBody] = useState("");
+	const {
+		setNotesList,
+		notesList,
+		noteTitle,
+		setNoteTitle,
+		noteBody,
+		setNoteBody,
+		isFormExpanded,
+		setIsFormExpanded,
+		setPlaceHolder,
+		formHeight,
+		setFormHeight,
+		selectedId,
+	} = useGlobalContext();
+
+	useEffect(() => {
+		if (isFormExpanded) {
+			setFormHeight("auto");
+			setPlaceHolder("Title");
+		} else {
+			setFormHeight("55px");
+			setPlaceHolder("Take a Note...");
+		}
+	}, [isFormExpanded]);
 
 	let data = {
-		query: { title: noteTitle, detail: noteBody },
+		query: { selectedId },
 		noteData: { title: noteTitle, detail: noteBody },
 	};
 
@@ -34,45 +57,19 @@ const CreateNote = () => {
 		await putData(data);
 		setNotesList([...notesList, data.noteData]);
 		setNoteTitle("");
+		setNoteBody("");
 		return;
 	};
 
 	return (
-		<div className="create-form-container">
-			<div className="form-container">
-				<input
-					placeholder="Title"
-					value={noteTitle}
-					className="title-input"
-					onChange={(e) => setNoteTitle(e.target.value)}
-				/>
-				<textarea
-					placeholder="Title"
-					value={noteBody}
-					className="textarea"
-					onChange={(e) => setnoteBody(e.target.value)}
-				/>
-			</div>
-			<IconContainer data={data} submitHandler={submitHandler} />
+		<div className="create-form-container" style={{ height: formHeight }}>
+			<CreateUpdateForm />
+			<IconContainer
+				NoteIcons={NoteIcons}
+				submitHandler={submitHandler}
+				setIsFormExpanded={setIsFormExpanded}
+			></IconContainer>
 		</div>
-	);
-};
-
-const IconContainer = ({ submitHandler }) => {
-	return (
-		<ul className="form-btn">
-			{NoteIcons.map((newIcon, index) => {
-				const { icon } = newIcon;
-				return (
-					<li key={index} className="icon-item">
-						{icon}
-					</li>
-				);
-			})}
-			<li className="new-note-btn" onClick={(e) => submitHandler(e)}>
-				Done
-			</li>
-		</ul>
 	);
 };
 

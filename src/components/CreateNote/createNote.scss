@@ -8,15 +8,13 @@ $clr-active: #41331c;
 	display: flex;
 	position: relative;
 	flex-direction: column;
-	padding: 0.6rem 0.5rem;
+	overflow: hidden;
+	padding: 0.3rem 0.5rem;
 	margin: auto;
-	max-width: 55%;
+	max-width: 650px;
 	min-width: 650px;
-	height: auto;
-
 	border: 1px solid $clr-secondary;
 	border-radius: 8px;
-
 	width: auto;
 
 	.form-container {
@@ -34,8 +32,6 @@ $clr-active: #41331c;
 		}
 
 		.title-input {
-			// border-bottom: none;
-			border-bottom: 1px solid $clr-lightgrey;
 			margin-bottom: 5px;
 			height: 40px;
 		}
@@ -62,9 +58,9 @@ $clr-active: #41331c;
 			background-color: $clr-lightgrey;
 			height: 30px;
 			width: 70px;
-			border-radius: 8px;
+			border-radius: 5px;
 			text-align: center;
-			padding: 0.25rem 0.5rem;
+			padding: 0.13rem 0.5rem;
 			cursor: pointer;
 		}
 

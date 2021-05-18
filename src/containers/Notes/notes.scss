@@ -2,3 +2,26 @@ $clr-primary: #202124;
 $clr-lightgrey: #525356;
 $clr-secondary: #999999;
 $clr-logo: #e2e2e2;
+
+.main-body {
+	display: flex;
+	flex: 1;
+}
+
+.side-panel {
+	position: absolute;
+	z-index: 5;
+}
+
+.main-panel {
+	display: flex;
+	flex-direction: column;
+	width: 100%;
+	margin-left: 64px;
+	margin-top: 10px;
+
+	.secondary-section {
+		display: flex;
+		flex-wrap: wrap;
+	}
+}

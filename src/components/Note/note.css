@@ -1,31 +1,60 @@
-.container {
+.note-container {
   position: relative;
   color: #e2e2e2;
-  display: -webkit-inline-box;
-  display: -ms-inline-flexbox;
-  display: inline-flex;
-  -ms-flex-wrap: wrap;
-      flex-wrap: wrap;
-  -webkit-box-align: start;
-      -ms-flex-align: start;
-          align-items: flex-start;
-}
-
-.container .note-container {
-  min-width: 250px;
-  width: 250px;
+  background-color: #202124;
   border: 2px solid #999999;
   border-radius: 8px;
   margin: 30px 20px;
+  min-width: 250px;
+  width: 250px;
+  height: auto;
+  -webkit-transition: all 200ms ease-in-out;
+  transition: all 200ms ease-in-out;
   padding: 1rem;
 }
 
-.container .note-container .note-title {
+.note-container .note-title {
   margin: auto auto 15px auto;
 }
 
-.container .note-container .note-detail {
+.note-container .note-detail {
   margin: auto auto 50px 0;
   width: 75%;
+}
+
+.expand {
+  width: 500px;
+}
+
+.expand .close-btn {
+  position: absolute;
+  left: 95%;
+  cursor: pointer;
+  width: 20px;
+  height: 20px;
+  border: #e2e2e2;
+  padding: auto;
+  margin: auto;
+}
+
+.expand .close-btn :hover {
+  background-color: #525356;
+}
+
+.expand .close-btn .close-btn-1,
+.expand .close-btn .close-btn-2 {
+  width: 16px;
+  height: 1px;
+  background-color: #999999;
+}
+
+.expand .close-btn .close-btn-1 {
+  -webkit-transform: rotate(45deg);
+          transform: rotate(45deg);
+}
+
+.expand .close-btn .close-btn-2 {
+  -webkit-transform: rotate(135deg) translate(-1px, 1px);
+          transform: rotate(135deg) translate(-1px, 1px);
 }
 /*# sourceMappingURL=note.css.map */
