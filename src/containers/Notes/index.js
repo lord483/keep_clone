@@ -8,7 +8,7 @@ import "./notes.css";
 import { useGlobalContext } from "../../context/context";
 
 const Notes = () => {
-	const { isListEmpty, isNoteOpen } = useGlobalContext();
+	const { isListEmpty } = useGlobalContext();
 
 	return (
 		<main className="page-body-container">

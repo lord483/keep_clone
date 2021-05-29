@@ -13,13 +13,12 @@ const CreateNote = () => {
 		setNoteTitle,
 		noteBody,
 		setNoteBody,
-		isFormExpanded,
-		setIsFormExpanded,
-		setPlaceHolder,
-		formHeight,
-		setFormHeight,
 		selectedId,
 	} = useGlobalContext();
+
+	const [isFormExpanded, setIsFormExpanded] = useState(false);
+	const [formHeight, setFormHeight] = useState("55px");
+	const [placeHolder, setPlaceHolder] = useState("Take a Note...");
 
 	useEffect(() => {
 		if (isFormExpanded) {
@@ -29,14 +28,13 @@ const CreateNote = () => {
 			setFormHeight("55px");
 			setPlaceHolder("Take a Note...");
 		}
-	}, [isFormExpanded]);
+	}, [isFormExpanded, setPlaceHolder, setFormHeight]);
 
 	let data = {
-		query: { selectedId },
 		noteData: { title: noteTitle, detail: noteBody },
 	};
 
-	const putData = async () => {
+	const createNote = async () => {
 		try {
 			const response = await fetch("/api", {
 				method: "POST",
@@ -54,7 +52,7 @@ const CreateNote = () => {
 
 	const submitHandler = async (e) => {
 		e.preventDefault();
-		await putData(data);
+		await createNote();
 		setNotesList([...notesList, data.noteData]);
 		setNoteTitle("");
 		setNoteBody("");
@@ -63,7 +61,14 @@ const CreateNote = () => {
 
 	return (
 		<div className="create-form-container" style={{ height: formHeight }}>
-			<CreateUpdateForm />
+			<CreateUpdateForm
+				props={{
+					isFormExpanded,
+					setIsFormExpanded,
+					placeHolder,
+					setPlaceHolder,
+				}}
+			/>
 			<IconContainer
 				NoteIcons={NoteIcons}
 				submitHandler={submitHandler}
