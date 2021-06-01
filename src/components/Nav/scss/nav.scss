@@ -16,31 +16,6 @@ nav {
 	align-items: center;
 	border-bottom: 1px solid $clr-lightgrey;
 
-	.menu-icon {
-		display: flex;
-		align-items: center;
-		justify-content: center;
-		color: $clr-logo;
-		margin: auto;
-		height: 45px;
-		width: 75px;
-		font-size: 1.5rem;
-		padding: 0.125rem;
-		border: 1px solid transparent;
-		border-radius: 50%;
-		cursor: pointer;
-		transition: all 100ms ease-in;
-
-		svg {
-			pointer-events: none;
-		}
-		:hover,
-		:focus-visible,
-		:focus {
-			background-color: #303235;
-		}
-	}
-
 	img {
 		margin: 0.3rem;
 		width: 40px;
@@ -53,43 +28,6 @@ nav {
 		margin-top: 0.1rem;
 		padding: 0.1rem;
 		font-weight: normal;
-	}
-
-	form {
-		width: 100%;
-		position: relative;
-		display: flex;
-		padding-left: 6.5rem;
-		padding-right: 2rem;
-
-		.icon-container {
-			position: relative;
-			padding: 10px;
-			height: 46px;
-			border-radius: 8px 0 0 8px;
-			background-color: $clr-lightgrey;
-			color: $clr-secondary;
-			align-items: center;
-			.search-icon {
-				font-size: 1.75rem;
-				color: $clr-logo;
-			}
-		}
-
-		input {
-			width: 100%;
-			height: 46px;
-			border-radius: 0 8px 8px 0;
-			border: 1px solid transparent;
-			color: $clr-logo;
-			background-color: $clr-lightgrey;
-			transition: background-color 100ms ease-in;
-		}
-
-		:focus-visible {
-			background-color: $clr-logo;
-			color: $clr-lightgrey;
-		}
 	}
 
 	.dark-icon-container {

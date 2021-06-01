@@ -1,0 +1,31 @@
+$clr-primary: #202124;
+$clr-logo: #e2e2e2;
+
+.form-container {
+	display: flex;
+	height: auto;
+	flex-direction: column;
+	margin-bottom: 1rem;
+	.title-input,
+	.textarea {
+		background-color: $clr-primary;
+		border: none;
+		margin: auto 1.5rem;
+		color: $clr-logo;
+		font-size: 1rem;
+	}
+
+	.title-input {
+		margin-bottom: 5px;
+		height: 40px;
+	}
+
+	.textarea {
+		height: 60px;
+		padding-top: 5px;
+	}
+
+	:focus-visible {
+		outline: none;
+	}
+}

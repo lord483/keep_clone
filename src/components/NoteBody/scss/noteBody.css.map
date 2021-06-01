@@ -1,0 +1,9 @@
+{
+    "version": 3,
+    "mappings": "AAAA,AAAA,YAAY,CAAC;EACZ,MAAM,EAAE,gBAAgB;EACxB,KAAK,EAAE,GAAG;EACV,UAAU,EAAE,yBAAyB;EACrC,WAAW,EAAE,GAAG;CAChB",
+    "sources": [
+        "noteBody.scss"
+    ],
+    "names": [],
+    "file": "noteBody.css"
+}

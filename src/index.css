@@ -14,9 +14,9 @@ body {
 
 .page-icon-container {
 	display: inline-block;
-	position: relative;
+	position: absolute;
 	left: 50%;
-	top: 25%;
+	top: 55%;
 	margin: auto;
 	padding: 1rem;
 	text-align: center;

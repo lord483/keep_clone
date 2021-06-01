@@ -1,0 +1,17 @@
+.new-note-btn {
+  color: #e2e2e2;
+  background-color: #525356;
+  list-style-type: none;
+  display: -webkit-inline-box;
+  display: -ms-inline-flexbox;
+  display: inline-flex;
+  margin: 0.3rem;
+  border-radius: 5px;
+  text-align: center;
+  padding: 0.2rem 0.75rem;
+  width: -webkit-max-content;
+  width: -moz-max-content;
+  width: max-content;
+  cursor: pointer;
+}
+/*# sourceMappingURL=submitBtn.css.map */

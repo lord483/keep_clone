@@ -1,0 +1,9 @@
+{
+    "version": 3,
+    "mappings": "AAEA,AAAA,sBAAsB,CAAC;EACtB,OAAO,EAAE,IAAI;EACb,QAAQ,EAAE,QAAQ;EAClB,cAAc,EAAE,MAAM;EACtB,QAAQ,EAAE,MAAM;EAChB,OAAO,EAAE,aAAa;EACtB,MAAM,EAAE,IAAI;EACZ,SAAS,EAAE,KAAK;EAChB,SAAS,EAAE,KAAK;EAChB,MAAM,EAAE,GAAG,CAAC,KAAK,CAXF,OAAO;EAYtB,aAAa,EAAE,GAAG;EAClB,KAAK,EAAE,IAAI;CACX",
+    "sources": [
+        "createNote.scss"
+    ],
+    "names": [],
+    "file": "createNote.css"
+}

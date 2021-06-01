@@ -1,10 +1,9 @@
 import React from "react";
 import { useGlobalContext } from "../../context/context";
+import "./scss/createForm.css";
 
-const CreateUpdateForm = ({ props }) => {
+const CreateUpdateForm = ({ setFormHeight, setPlaceHolder, placeHolder }) => {
 	const { noteTitle, setNoteTitle, noteBody, setNoteBody } = useGlobalContext();
-
-	const { setIsFormExpanded, placeHolder } = props;
 
 	return (
 		<div className="form-container">
@@ -14,7 +13,8 @@ const CreateUpdateForm = ({ props }) => {
 				className="title-input"
 				onChange={(e) => setNoteTitle(e.target.value)}
 				onClick={() => {
-					setIsFormExpanded(true);
+					setFormHeight("auto");
+					setPlaceHolder("Title");
 				}}
 			/>
 			<textarea

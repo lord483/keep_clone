@@ -1,0 +1,15 @@
+$clr-secondary: #999999;
+
+.create-form-container {
+	display: flex;
+	position: relative;
+	flex-direction: column;
+	overflow: hidden;
+	padding: 0.3rem 0.5rem;
+	margin: auto;
+	max-width: 650px;
+	min-width: 650px;
+	border: 1px solid $clr-secondary;
+	border-radius: 8px;
+	width: auto;
+}

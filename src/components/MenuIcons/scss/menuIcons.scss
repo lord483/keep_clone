@@ -1,0 +1,29 @@
+$clr-primary: #202124;
+$clr-lightgrey: #525356;
+$clr-secondary: #999999;
+$clr-logo: #e2e2e2;
+
+.menu-icon {
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	color: $clr-logo;
+	margin-left: 0;
+	height: 45px;
+	width: 75px;
+	font-size: 1.5rem;
+	padding: 0.125rem;
+	border: 1px solid transparent;
+	border-radius: 50%;
+	cursor: pointer;
+	transition: all 100ms ease-in;
+
+	svg {
+		pointer-events: none;
+	}
+	:hover,
+	:focus-visible,
+	:focus {
+		background-color: #303235;
+	}
+}

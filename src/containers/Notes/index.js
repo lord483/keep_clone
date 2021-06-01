@@ -1,10 +1,10 @@
 import React from "react";
-import Note from "../../components/Note";
+import NotesList from "../../components/NotesLists";
 import Nav from "../../components/Nav";
 import Sidebar from "../../components/Sidebar";
 import EmptyPage from "../../components/EmptyPage/EmptyPage";
 import CreateNote from "../../components/CreateNote";
-import "./notes.css";
+import "./scss/notes.css";
 import { useGlobalContext } from "../../context/context";
 
 const Notes = () => {
@@ -22,7 +22,7 @@ const Notes = () => {
 				<div className="main-panel">
 					<CreateNote />
 					<div className="secondary-section">
-						{isListEmpty ? <EmptyPage /> : <Note />}
+						{isListEmpty ? <EmptyPage /> : <NotesList />}
 					</div>
 				</div>
 			</div>

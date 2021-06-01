@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from "react";
 import { BrowserRouter as Router, Link } from "react-router-dom";
 import { useGlobalContext } from "../../context/context";
-import "./sidebar.css";
+import "./scss/sidebar.css";
 
 const Sidebar = () => {
 	const {

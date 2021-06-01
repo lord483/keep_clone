@@ -1,0 +1,40 @@
+.note-container {
+  position: relative;
+  color: #e2e2e2;
+  background-image: linear-gradient(135deg, rgba(100, 100, 100, 0), rgba(100, 100, 100, 0.15));
+  border: 2px solid rgba(100, 100, 100, 0.1);
+  border-radius: 8px;
+  margin: 30px 20px;
+  min-width: 250px;
+  width: 250px;
+  height: -webkit-fit-content;
+  height: -moz-fit-content;
+  height: fit-content;
+  -webkit-box-shadow: 5px 5px 10px rgba(0, 0, 0, 0.25);
+          box-shadow: 5px 5px 10px rgba(0, 0, 0, 0.25);
+  -webkit-transition: all 200ms ease-in-out;
+  transition: all 200ms ease-in-out;
+  padding: 1rem;
+}
+
+.note-container .note-title {
+  margin: auto auto 15px auto;
+  -webkit-transition: padding 200ms ease-in-out;
+  transition: padding 200ms ease-in-out;
+}
+
+.expand {
+  width: 500px;
+}
+
+.expand .note-title {
+  border-bottom: 1px solid #525356;
+  padding: 5px;
+}
+
+.expand .note-detail {
+  width: 100%;
+  border-bottom: 1px solid #525356;
+  padding: 5px;
+}
+/*# sourceMappingURL=note.css.map */

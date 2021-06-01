@@ -1,9 +1,9 @@
 import React, { useState, useEffect } from "react";
 import { useGlobalContext } from "../../context/context";
-import IconContainer from "../IconContainer";
-import "./createNote.css";
+import "./scss/createNote.css";
 import CreateUpdateForm from "../CreateUpdateForm";
-import { NoteIcons } from "../../assets/local-data";
+import createNote from "../../services/api/createNote";
+import SubmitBtn from "../SubmitBtn";
 
 const CreateNote = () => {
 	const {
@@ -13,47 +13,25 @@ const CreateNote = () => {
 		setNoteTitle,
 		noteBody,
 		setNoteBody,
-		selectedId,
 	} = useGlobalContext();
 
-	const [isFormExpanded, setIsFormExpanded] = useState(false);
+	const [newNoteId, setNewNoteId] = useState("");
 	const [formHeight, setFormHeight] = useState("55px");
 	const [placeHolder, setPlaceHolder] = useState("Take a Note...");
-
-	useEffect(() => {
-		if (isFormExpanded) {
-			setFormHeight("auto");
-			setPlaceHolder("Title");
-		} else {
-			setFormHeight("55px");
-			setPlaceHolder("Take a Note...");
-		}
-	}, [isFormExpanded, setPlaceHolder, setFormHeight]);
 
 	let data = {
 		noteData: { title: noteTitle, detail: noteBody },
 	};
 
-	const createNote = async () => {
-		try {
-			const response = await fetch("/api", {
-				method: "POST",
-				headers: {
-					Accept: "*/*",
-					"Content-Type": "application/json",
-				},
-				body: JSON.stringify(data),
-			});
-			return response.json();
-		} catch (error) {
-			console.error(error);
-		}
-	};
-
 	const submitHandler = async (e) => {
 		e.preventDefault();
-		await createNote();
-		setNotesList([...notesList, data.noteData]);
+		await createNote(data).then((result) => {
+			setNewNoteId(result.insertedId);
+			return;
+		});
+		setFormHeight("55px");
+		setPlaceHolder("Take a Note...");
+		setNotesList([...notesList, { _id: newNoteId, ...data.noteData }]);
 		setNoteTitle("");
 		setNoteBody("");
 		return;
@@ -62,18 +40,13 @@ const CreateNote = () => {
 	return (
 		<div className="create-form-container" style={{ height: formHeight }}>
 			<CreateUpdateForm
-				props={{
-					isFormExpanded,
-					setIsFormExpanded,
-					placeHolder,
+				{...{
+					setFormHeight,
 					setPlaceHolder,
+					placeHolder,
 				}}
 			/>
-			<IconContainer
-				NoteIcons={NoteIcons}
-				submitHandler={submitHandler}
-				setIsFormExpanded={setIsFormExpanded}
-			></IconContainer>
+			<SubmitBtn {...{ submitHandler, text: "Done" }} />
 		</div>
 	);
 };

@@ -1,0 +1,44 @@
+$clr-primary: #202124;
+$clr-lightgrey: #525356;
+$clr-secondary: #999999;
+$clr-logo: #e2e2e2;
+
+form {
+	width: 100%;
+	position: relative;
+	display: flex;
+	padding-left: 6.5rem;
+	padding-right: 2rem;
+	max-width: 800px;
+	margin-left: 2rem;
+	margin-right: auto;
+
+	.icon-container {
+		position: relative;
+		padding: 10px;
+		height: 46px;
+		border-radius: 8px 0 0 8px;
+		background-color: $clr-lightgrey;
+		color: $clr-secondary;
+		align-items: center;
+		.search-icon {
+			font-size: 1.75rem;
+			color: $clr-logo;
+		}
+	}
+
+	input {
+		width: 100%;
+		height: 46px;
+		border-radius: 0 8px 8px 0;
+		border: 1px solid transparent;
+		color: $clr-logo;
+		background-color: $clr-lightgrey;
+		transition: background-color 100ms ease-in;
+	}
+
+	:focus-visible {
+		background-color: $clr-logo;
+		color: $clr-lightgrey;
+	}
+}

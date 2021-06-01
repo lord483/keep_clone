@@ -1,0 +1,15 @@
+$clr-lightgrey: #525356;
+$clr-logo: #e2e2e2;
+
+.new-note-btn {
+	color: $clr-logo;
+	background-color: $clr-lightgrey;
+	list-style-type: none;
+	display: inline-flex;
+	margin: 0.3rem;
+	border-radius: 5px;
+	text-align: center;
+	padding: 0.2rem 0.75rem;
+	width: max-content;
+	cursor: pointer;
+}
