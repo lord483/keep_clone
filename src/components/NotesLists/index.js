@@ -1,11 +1,20 @@
-import React from "react";
+import React, { useState, useEffect } from "react";
 import { useGlobalContext } from "../../context/context";
 import Note from "../Note";
 
 const NotesList = () => {
-	const { notesList } = useGlobalContext();
+	const { notesList, filteredList } = useGlobalContext();
+	const [currentList, setCurrentList] = useState([]);
 
-	return notesList.map((note, index) => {
+	useEffect(() => {
+		if (filteredList.length > 0) {
+			setCurrentList(filteredList);
+		} else {
+			setCurrentList(notesList);
+		}
+	}, [filteredList, currentList]);
+
+	return currentList.map((note, index) => {
 		const { _id, title, detail } = note;
 
 		return (

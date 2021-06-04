@@ -34,12 +34,17 @@ const Note = ({ _id, title, detail }) => {
 
 	const deleteHandler = async (e) => {
 		e.preventDefault();
+
 		const newNoteList = notesList.filter(
 			(deletedNote) => deletedNote._id !== selectedId
 		);
-		setNotesList(newNoteList);
 		await deleteNote(data);
+		setNotesList(newNoteList);
 	};
+
+	useEffect(() => {
+		console.log(notesList);
+	}, [notesList]);
 
 	return (
 		<div

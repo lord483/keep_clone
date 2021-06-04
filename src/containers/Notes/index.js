@@ -1,8 +1,8 @@
 import React from "react";
 import NotesList from "../../components/NotesLists";
-import Nav from "../../components/Nav";
-import Sidebar from "../../components/Sidebar";
-import EmptyPage from "../../components/EmptyPage/EmptyPage";
+import Nav from "../Nav";
+import Sidebar from "../Sidebar";
+import EmptyPage from "../EmptyPage/EmptyPage";
 import CreateNote from "../../components/CreateNote";
 import "./scss/notes.css";
 import { useGlobalContext } from "../../context/context";

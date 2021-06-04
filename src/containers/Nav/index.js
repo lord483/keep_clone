@@ -2,8 +2,8 @@ import React from "react";
 import "./scss/nav.css";
 import { IoMenuSharp } from "react-icons/io5";
 import logo from "../../assets/keep_icon.png";
-import Search from "../Search";
-import MenuIcons from "../MenuIcons";
+import Search from "../../components/Search";
+import MenuIcons from "../../components/MenuIcons";
 import { useGlobalContext } from "../../context/context";
 
 const Nav = () => {

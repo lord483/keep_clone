@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from "react";
+import React, { useState } from "react";
 import { useGlobalContext } from "../../context/context";
 import "./scss/createNote.css";
 import CreateUpdateForm from "../CreateUpdateForm";

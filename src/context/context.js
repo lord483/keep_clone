@@ -15,6 +15,7 @@ const AppProvider = ({ children }) => {
 	const [noteTitle, setNoteTitle] = useState("");
 	const [noteBody, setNoteBody] = useState("");
 	const [selectedId, setSelectedId] = useState(0);
+	const [filteredList, setFilteredList] = useState(notesList);
 
 	const fetchData = async () => {
 		setLoading(true);
@@ -71,7 +72,10 @@ const AppProvider = ({ children }) => {
 				notesList,
 				noteTitle,
 				noteBody,
-				selectedId, // NoteID from Database
+				selectedId,
+				filteredList,
+				setFilteredList,
+				// NoteID from Database
 			}}
 		>
 			{children}
