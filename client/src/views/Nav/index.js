@@ -7,12 +7,13 @@ import MenuIcons from "../../components/MenuIcons";
 import { useGlobalContext } from "../../context/context";
 
 const Nav = () => {
-	const { IsSidebarOpen, setIsSidebarOpen } = useGlobalContext();
+	const { isSidebarOpen, setIsSidebarOpen } = useGlobalContext();
+
 	return (
 		<nav>
 			<div
 				className="menu-icon"
-				onClick={() => setIsSidebarOpen(!IsSidebarOpen)}
+				onClick={() => setIsSidebarOpen(!isSidebarOpen)}
 			>
 				<IoMenuSharp />
 			</div>

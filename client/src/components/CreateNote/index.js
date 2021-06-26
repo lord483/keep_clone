@@ -1,52 +1,61 @@
 import React, { useState } from "react";
 import { useGlobalContext } from "../../context/context";
 import "./scss/createNote.css";
-import CreateUpdateForm from "../CreateUpdateForm";
+import CreateUpdateForm from "../CreateForm";
 import createNote from "../../services/api/createNote";
 import SubmitBtn from "../SubmitBtn";
 
 const CreateNote = () => {
-	const {
-		setNotesList,
-		notesList,
-		noteTitle,
-		setNoteTitle,
-		noteBody,
-		setNoteBody,
-	} = useGlobalContext();
+	const [noteTitle, setNoteTitle] = useState("");
+	const [noteBody, setNoteBody] = useState("");
+	const [isFormOpen, setIsFormOpen] = useState(false);
 
-	const [newNoteId, setNewNoteId] = useState("");
-	const [formHeight, setFormHeight] = useState("55px");
-	const [placeHolder, setPlaceHolder] = useState("Take a Note...");
+	const { setNotesList, notesList, type } = useGlobalContext();
 
 	let data = {
-		noteData: { title: noteTitle, detail: noteBody },
+		noteData: {
+			title: noteTitle,
+			detail: noteBody,
+			history: [type],
+			status: type,
+			createdOn: new Date().toLocaleString(),
+		},
 	};
 
 	const submitHandler = async (e) => {
 		e.preventDefault();
-		await createNote(data).then((result) => {
-			setNewNoteId(result.insertedId);
-			return;
+
+		createNote(data).then((result) => {
+			setNotesList([...notesList, result.insertedNote]);
 		});
-		setFormHeight("55px");
-		setPlaceHolder("Take a Note...");
-		setNotesList([...notesList, { _id: newNoteId, ...data.noteData }]);
+
+		setIsFormOpen(false);
 		setNoteTitle("");
 		setNoteBody("");
-		return;
 	};
 
+	const clickHandler = () => setIsFormOpen(false);
+
 	return (
-		<div className="create-form-container" style={{ height: formHeight }}>
+		<div
+			className={
+				isFormOpen ? "create-form-container form-open" : "create-form-container"
+			}
+		>
 			<CreateUpdateForm
 				{...{
-					setFormHeight,
-					setPlaceHolder,
-					placeHolder,
+					setIsFormOpen,
+					isFormOpen,
+					noteTitle,
+					setNoteTitle,
+					noteBody,
+					setNoteBody,
 				}}
 			/>
-			<SubmitBtn {...{ submitHandler, text: "Done" }} />
+			<div className="note-btn-container">
+				<SubmitBtn {...{ submitHandler, text: "Done" }} />
+				<SubmitBtn {...{ submitHandler: clickHandler, text: "Close" }} />
+			</div>
 		</div>
 	);
 };

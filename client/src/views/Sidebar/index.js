@@ -10,6 +10,7 @@ const Sidebar = () => {
 		SidebarData,
 		isSidebarOpen,
 		setIsSidebarOpen,
+		setType,
 	} = useGlobalContext();
 
 	const [sidebarWidth, setSidebarWidth] = useState("60px");
@@ -37,16 +38,17 @@ const Sidebar = () => {
 			<Router>
 				<ul className="side-container">
 					{SidebarData.map((data, index) => {
-						const { icon, path, id, label } = data;
+						const { icon, id, label } = data;
 						return (
 							<li
 								className={`side-item ${id === activeId && "active"}`}
 								key={index}
-								onClick={() => setActiveId(id)}
+								onClick={() => {
+									setActiveId(id);
+									setType(label.toLowerCase());
+								}}
 							>
-								<Link to={path} className="side-item">
-									{icon} <h4>{label}</h4>
-								</Link>
+								{icon} <h4>{label}</h4>
 							</li>
 						);
 					})}

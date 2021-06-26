@@ -13,5 +13,6 @@
   width: -moz-max-content;
   width: max-content;
   cursor: pointer;
+  text-transform: capitalize;
 }
 /*# sourceMappingURL=submitBtn.css.map */

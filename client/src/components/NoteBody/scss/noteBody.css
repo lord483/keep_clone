@@ -4,5 +4,6 @@
   -webkit-transition: padding 200ms ease-in-out;
   transition: padding 200ms ease-in-out;
   line-height: 1.5;
+  white-space: pre-line;
 }
 /*# sourceMappingURL=noteBody.css.map */

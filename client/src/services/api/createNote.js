@@ -1,6 +1,6 @@
 const createNote = async (postData) => {
 	try {
-		const response = await fetch("/api", {
+		const response = await fetch(`/api`, {
 			method: "POST",
 			headers: {
 				Accept: "*/*",

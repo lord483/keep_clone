@@ -1,6 +1,6 @@
 const updateNote = async (data) => {
 	try {
-		const response = await fetch("/api/update", {
+		const response = await fetch(`/api/update`, {
 			method: "PUT",
 			headers: {
 				Accept: "*/*",

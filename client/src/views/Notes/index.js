@@ -6,9 +6,10 @@ import EmptyPage from "../EmptyPage/EmptyPage";
 import CreateNote from "../../components/CreateNote";
 import "./scss/notes.css";
 import { useGlobalContext } from "../../context/context";
+import ActionNotifier from "../../modal/ActionNotifier";
 
 const Notes = () => {
-	const { isListEmpty } = useGlobalContext();
+	const { notesList } = useGlobalContext();
 
 	return (
 		<main className="page-body-container">
@@ -22,10 +23,11 @@ const Notes = () => {
 				<div className="main-panel">
 					<CreateNote />
 					<div className="secondary-section">
-						{isListEmpty ? <EmptyPage /> : <NotesList />}
+						{notesList.length === 0 ? <EmptyPage /> : <NotesList />}
 					</div>
 				</div>
 			</div>
+			<ActionNotifier />
 		</main>
 	);
 };

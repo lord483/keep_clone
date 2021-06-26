@@ -1,0 +1,17 @@
+.notifier-container {
+	position: absolute;
+	border: 1px solid lightgrey;
+	border-radius: 8px;
+	width: 375px;
+	height: 40px;
+	color: azure;
+	text-align: center;
+	padding-top: 9px;
+	left: 39%;
+	bottom: 50px;
+}
+
+.notification {
+	width: 100%;
+	font-size: 13px;
+}

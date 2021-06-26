@@ -36,41 +36,26 @@ const SidebarData = [
 		id: 0,
 		icon: <AiOutlineBulb />,
 		label: "Notes",
-		subTitle: "Note you add appear here",
-		path: "/",
-		// page = <Notes />
+		subTitle: "Notes you add appear here",
 	},
 	{
 		id: 1,
 		icon: <AiOutlineBell />,
 		label: "Reminders",
-		subTitle: "Note with upcoming reminders appear here",
-		path: "/reminder",
-		// page = <Reminders />
+		subTitle: "Notes with upcoming reminders appear here",
 	},
+
 	{
 		id: 2,
-		icon: <AiOutlineEdit />,
-		label: "Edit Labels",
-		subTitle: "No labels yet",
-		path: "/labels",
-		// page: <Labels />
-	},
-	{
-		id: 3,
 		icon: <BiArchiveIn />,
 		label: "Archive",
 		subTitle: "Your archived notes appear here",
-		path: "/archive",
-		// page: <Archive />
 	},
 	{
-		id: 4,
+		id: 3,
 		icon: <BiTrashAlt />,
 		label: "Trash",
 		subTitle: "No notes in trash",
-		path: "/trash",
-		// page: <Trash />
 	},
 ];
 

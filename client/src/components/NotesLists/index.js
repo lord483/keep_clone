@@ -3,29 +3,27 @@ import { useGlobalContext } from "../../context/context";
 import Note from "../Note";
 
 const NotesList = () => {
-	const { notesList, filteredList } = useGlobalContext();
-	const [currentList, setCurrentList] = useState([]);
+	const { notesList } = useGlobalContext();
+	const [selectedId, setSelectedId] = useState("");
 
-	useEffect(() => {
-		if (filteredList.length > 0) {
-			setCurrentList(filteredList);
-		} else {
-			setCurrentList(notesList);
-		}
-	}, [filteredList, currentList]);
-
-	return currentList.map((note, index) => {
-		const { _id, title, detail } = note;
+	return notesList.map((note, index) => {
+		const { _id, title, detail, history, status } = note;
 
 		return (
-			<Note
-				key={index}
-				{...{
-					_id,
-					title,
-					detail,
-				}}
-			/>
+			<React.Fragment>
+				<Note
+					key={index}
+					{...{
+						_id,
+						title,
+						detail,
+						selectedId,
+						setSelectedId,
+						history,
+						status,
+					}}
+				/>
+			</React.Fragment>
 		);
 	});
 };

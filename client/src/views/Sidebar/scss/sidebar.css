@@ -1,12 +1,10 @@
 .main-container {
   display: inline-block;
-  position: relative;
   -webkit-box-shadow: 5px 0 15px 0 rgba(0, 0, 0, 0.3);
           box-shadow: 5px 0 15px 0 rgba(0, 0, 0, 0.3);
   overflow: hidden;
   width: 60px;
-  height: 100vh;
-  z-index: 10;
+  height: calc(100vh - 67px);
   background-color: #202124;
 }
 
@@ -26,11 +24,7 @@
 }
 
 .side-container .active :hover {
-  background-color: #41331c !important;
-}
-
-.side-container .active svg {
-  background-color: #41331c;
+  background-color: inherit;
 }
 
 .side-container .side-item {
@@ -38,12 +32,13 @@
   display: -webkit-inline-box;
   display: -ms-inline-flexbox;
   display: inline-flex;
+  margin: 5px auto;
   padding-left: 0;
   -webkit-box-align: center;
       -ms-flex-align: center;
           align-items: center;
   text-decoration: none;
-  height: 3rem;
+  height: 2.75rem;
   width: 265px;
   cursor: pointer;
   border-radius: 100px;
@@ -62,14 +57,15 @@
   -webkit-box-pack: center;
       -ms-flex-pack: center;
           justify-content: center;
-  width: 46px;
-  height: 46px;
+  width: 42px;
+  height: 42px;
   padding: 8px;
   padding-left: 6px;
   border-radius: 48%;
+  pointer-events: none;
 }
 
-.side-container .side-item :hover {
+.side-container :hover {
   background-color: #525356;
 }
 /*# sourceMappingURL=sidebar.css.map */

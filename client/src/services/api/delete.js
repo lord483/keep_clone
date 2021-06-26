@@ -1,12 +1,13 @@
 const deleteNote = async (data) => {
 	try {
-		const response = await fetch("/api/delete", {
+		console.log(data);
+		const response = await fetch(`/api/delete`, {
 			method: "DELETE",
 			headers: {
 				Accept: "*/*",
 				"Content-Type": "application/json",
 			},
-			body: JSON.stringify(data.query),
+			body: JSON.stringify(data),
 		});
 		return response.json();
 	} catch (error) {

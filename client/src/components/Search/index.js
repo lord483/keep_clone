@@ -1,43 +1,22 @@
-import React, { useState, useEffect } from "react";
+import React from "react";
 import { AiOutlineSearch } from "react-icons/ai";
 import "./scss/search.css";
-import { useGlobalContext } from "../../context/context";
+import SearchInput from "./SearchInput";
+import searchFilter from "../../services/local/searchFilter";
 
 const Search = () => {
-	const { notesList, setFilteredList } = useGlobalContext();
-	const [searchTerm, setSearchTerm] = useState("");
-
-	const searchHandler = () => {
-		if (searchTerm === "") {
-			setFilteredList(notesList);
-		} else {
-			const searchList = notesList.filter(
-				(newNote) =>
-					newNote.title.toLowerCase() === searchTerm.toLowerCase() ||
-					newNote.detail.toLowerCase() === searchTerm.toLowerCase()
-			);
-
-			if (searchList.length > 0) {
-				setFilteredList(searchList);
-			}
-		}
-		return;
-	};
-
-	useEffect(() => {
-		searchHandler();
-	}, [searchTerm]);
+	const [searchTerm, setSearchTerm] = React.useState("");
 
 	return (
-		<form>
+		<form
+			onSubmit={() => {
+				searchFilter(searchTerm);
+			}}
+		>
 			<div className="icon-container">
 				<AiOutlineSearch className="search-icon" />
 			</div>
-			<input
-				type="text"
-				placeholder="Search"
-				onChange={(e) => setSearchTerm(e.target.value)}
-			/>
+			<SearchInput {...{ setSearchTerm, searchTerm }} />
 		</form>
 	);
 };
