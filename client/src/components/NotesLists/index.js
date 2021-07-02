@@ -1,29 +1,27 @@
-import React, { useState, useEffect } from "react";
+import React from "react";
 import { useGlobalContext } from "../../context/context";
 import Note from "../Note";
 
 const NotesList = () => {
 	const { notesList } = useGlobalContext();
-	const [selectedId, setSelectedId] = useState("");
+	const [selectedId, setSelectedId] = React.useState("");
 
-	return notesList.map((note, index) => {
+	return notesList.map((note) => {
 		const { _id, title, detail, history, status } = note;
 
 		return (
-			<React.Fragment>
-				<Note
-					key={index}
-					{...{
-						_id,
-						title,
-						detail,
-						selectedId,
-						setSelectedId,
-						history,
-						status,
-					}}
-				/>
-			</React.Fragment>
+			<Note
+				key={_id}
+				{...{
+					_id,
+					title,
+					detail,
+					selectedId,
+					setSelectedId,
+					history,
+					status,
+				}}
+			/>
 		);
 	});
 };

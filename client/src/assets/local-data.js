@@ -4,15 +4,9 @@ import {
 	IoSettingsOutline,
 	IoPersonAddOutline,
 	IoColorPaletteOutline,
-	// IoMdCheckboxOutline,
 } from "react-icons/io5";
 
-import {
-	AiOutlineBulb,
-	AiOutlineBell,
-	AiOutlineEdit,
-	AiOutlinePushpin,
-} from "react-icons/ai";
+import { AiOutlineBulb, AiOutlineBell, AiOutlinePushpin } from "react-icons/ai";
 import {
 	BiArchiveIn,
 	BiTrashAlt,

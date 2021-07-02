@@ -1,9 +1,35 @@
+html {
+  --scrollbarBG: #cfd8dc;
+  --thumbBG: #90a4ae;
+}
+
 .note-detail {
   margin: auto auto 50px 0;
-  width: 90%;
+  height: -webkit-fit-content;
+  height: -moz-fit-content;
+  height: fit-content;
+  max-height: 300px;
+  overflow: auto;
   -webkit-transition: padding 200ms ease-in-out;
   transition: padding 200ms ease-in-out;
   line-height: 1.5;
   white-space: pre-line;
+  word-wrap: break-word;
+  scrollbar-width: thin;
+  scrollbar-color: var(--thumbBG) var(--scrollbarBG);
+}
+
+.note-detail ::-webkit-scrollbar {
+  width: 10px;
+}
+
+.note-detail ::-webkit-scrollbar-track {
+  background: var(--scrollbarBG);
+}
+
+.note-detail ::-webkit-scrollbar-thumb {
+  background-color: var(--thumbBG);
+  border-radius: 6px;
+  border: 3px solid var(--scrollbarBG);
 }
 /*# sourceMappingURL=noteBody.css.map */

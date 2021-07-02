@@ -1,6 +1,8 @@
-import React, { useState } from "react";
+import React from "react";
+import { useGlobalContext } from "../../context/context";
 
-const SearchInput = ({ setSearchTerm, searchTerm }) => {
+const SearchInput = () => {
+	const { setSearchTerm, searchTerm } = useGlobalContext();
 	return (
 		<React.Fragment>
 			<input

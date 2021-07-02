@@ -28,6 +28,7 @@ const Note = ({
 			className={
 				_id === selectedId ? "note-container expand" : "note-container"
 			}
+			key={_id}
 			id={_id}
 			onClick={(e) => {
 				clickHandler(e, title, detail);

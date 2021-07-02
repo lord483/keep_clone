@@ -7,9 +7,6 @@
   margin: 30px 20px;
   min-width: 250px;
   width: 250px;
-  height: -webkit-fit-content;
-  height: -moz-fit-content;
-  height: fit-content;
   -webkit-box-shadow: 5px 5px 10px rgba(0, 0, 0, 0.25);
           box-shadow: 5px 5px 10px rgba(0, 0, 0, 0.25);
   -webkit-transition: all 200ms ease-in-out;

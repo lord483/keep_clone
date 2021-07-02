@@ -1,9 +1,9 @@
 const fetchData = async (queryParam) => {
 	try {
 		const response = await fetch(`/api/?query=${queryParam}`);
-		const data = await response.json();
+		const data = response;
 		if (data) {
-			return data;
+			return data.json();
 		} else {
 			return [];
 		}

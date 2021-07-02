@@ -1,7 +1,28 @@
+html {
+	--scrollbarBG: #cfd8dc;
+	--thumbBG: #90a4ae;
+}
+
 .note-detail {
 	margin: auto auto 50px 0;
-	width: 90%;
+	height: fit-content;
+	max-height: 300px;
+	overflow: auto;
 	transition: padding 200ms ease-in-out;
 	line-height: 1.5;
 	white-space: pre-line;
+	word-wrap: break-word;
+	::-webkit-scrollbar {
+		width: 10px;
+	}
+	::-webkit-scrollbar-track {
+		background: var(--scrollbarBG);
+	}
+	::-webkit-scrollbar-thumb {
+		background-color: var(--thumbBG);
+		border-radius: 6px;
+		border: 3px solid var(--scrollbarBG);
+	}
+	scrollbar-width: thin;
+	scrollbar-color: var(--thumbBG) var(--scrollbarBG);
 }
