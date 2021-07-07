@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from "react";
+import React from "react";
 import { BrowserRouter as Router } from "react-router-dom";
 import { useGlobalContext } from "../../context/context";
 import "./scss/sidebar.css";
@@ -13,25 +13,11 @@ const Sidebar = () => {
 		setType,
 	} = useGlobalContext();
 
-	const [sidebarWidth, setSidebarWidth] = useState("60px");
-
-	const sidebarStyles = {
-		width: sidebarWidth,
-		transition: "width 100ms ease-in-out",
-	};
-
-	useEffect(() => {
-		if (isSidebarOpen) {
-			setSidebarWidth("275px");
-		} else {
-			setSidebarWidth("60px");
-		}
-	}, [isSidebarOpen]);
-
 	return (
 		<div
-			className="main-container"
-			style={sidebarStyles}
+			className={`${
+				isSidebarOpen ? "main-container sidebar-open" : "main-container"
+			} `}
 			onMouseEnter={() => setIsSidebarOpen(true)}
 			onMouseLeave={() => setIsSidebarOpen(false)}
 		>

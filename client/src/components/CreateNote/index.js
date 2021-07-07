@@ -25,6 +25,7 @@ const CreateNote = () => {
 	const submitHandler = async (e) => {
 		e.preventDefault();
 
+		console.log(data);
 		createNote(data).then((result) => {
 			setNotesList([...notesList, result.insertedNote]);
 		});

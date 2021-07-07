@@ -6,6 +6,8 @@
   width: 60px;
   height: calc(100vh - 67px);
   background-color: #202124;
+  -webkit-transition: width 100ms ease-out;
+  transition: width 100ms ease-out;
 }
 
 .side-container {
@@ -67,5 +69,9 @@
 
 .side-container :hover {
   background-color: #525356;
+}
+
+.sidebar-open {
+  width: 275px;
 }
 /*# sourceMappingURL=sidebar.css.map */

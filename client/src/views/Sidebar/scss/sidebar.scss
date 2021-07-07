@@ -11,6 +11,7 @@ $clr-active: #41331c;
 	width: 60px;
 	height: calc(100vh - 67px);
 	background-color: $clr-primary;
+	transition: width 100ms ease-out;
 }
 
 .side-container {
@@ -59,4 +60,8 @@ $clr-active: #41331c;
 	:hover {
 		background-color: $clr-lightgrey;
 	}
+}
+
+.sidebar-open {
+	width: 275px;
 }

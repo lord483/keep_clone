@@ -18,6 +18,7 @@ const Note = ({
 
 	const clickHandler = (e, title, detail) => {
 		e.preventDefault();
+
 		setSelectedId(_id);
 		setNewNoteTitle(title);
 		setNewNoteBody(detail);

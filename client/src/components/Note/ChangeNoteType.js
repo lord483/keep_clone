@@ -2,7 +2,7 @@ import React from "react";
 import SubmitBtn from "../SubmitBtn";
 import { useGlobalContext } from "../../context/context";
 import updateNote from "../../services/api/update";
-import fetchData from "../../services/api/fetchData";
+import getData from "../../context/getData";
 
 const ChangeNoteType = ({ newType, history, selectedId }) => {
 	const { setNotesList } = useGlobalContext();
@@ -18,8 +18,10 @@ const ChangeNoteType = ({ newType, history, selectedId }) => {
 		e.preventDefault();
 		const tempHistory = data.noteData.history;
 		await updateNote(data);
-		const result = await fetchData(tempHistory[tempHistory.length - 1]);
-		setNotesList(result);
+		const result = await getData({
+			noteType: tempHistory[tempHistory.length - 1],
+		});
+		await setNotesList(result);
 	};
 
 	return (

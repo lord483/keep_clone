@@ -6,7 +6,7 @@ const NoteBody = ({ setNewNoteBody, _id, selectedId, detail }) => {
 		<div
 			className="note-detail"
 			onInput={(e) => {
-				setNewNoteBody(e.target.innerText);
+				setNewNoteBody(e.target.textContent);
 			}}
 			contentEditable={_id === selectedId}
 			dangerouslySetInnerHTML={{
