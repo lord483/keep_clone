@@ -9,7 +9,16 @@ import { useGlobalContext } from "../../context/context";
 import ActionNotifier from "../../modal/ActionNotifier";
 
 const Notes = () => {
-	const { notesList } = useGlobalContext();
+	const { notesList, toastNotificationText } = useGlobalContext();
+	const [toastNotificationVisible, setToastNotificationVisible] =
+		React.useState(false);
+
+	React.useEffect(() => {
+		setToastNotificationVisible(true);
+		setTimeout(() => {
+			setToastNotificationVisible(false);
+		}, 2000);
+	}, [toastNotificationText]);
 
 	return (
 		<main className="page-body-container">
@@ -27,7 +36,9 @@ const Notes = () => {
 					</div>
 				</div>
 			</div>
-			<ActionNotifier />
+			{toastNotificationVisible && (
+				<ActionNotifier toastNotificationText={toastNotificationText} />
+			)}
 		</main>
 	);
 };

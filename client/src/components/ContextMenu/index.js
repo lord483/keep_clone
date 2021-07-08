@@ -10,13 +10,16 @@ const ContextMenu = ({
 	newNoteTitle,
 	newNoteBody,
 	history,
+	status,
 }) => {
 	return (
 		<div className="context-menu">
 			<UpdateNote
 				{...{ setSelectedId, selectedId, newNoteTitle, newNoteBody }}
 			/>
-			<DeletePermanent {...{ selectedId }} />
+
+			{status === "trash" && <DeletePermanent {...{ selectedId }} />}
+
 			<ChangeNoteType {...{ newType: "reminders", history, selectedId }} />
 			<ChangeNoteType {...{ newType: "archive", history, selectedId }} />
 			<ChangeNoteType {...{ newType: "trash", history, selectedId }} />

@@ -1,10 +1,12 @@
 import React from "react";
 import "./scss/notifier.css";
 
-const ActionNotifier = () => {
+const ActionNotifier = ({ toastNotificationText }) => {
 	return (
 		<div className="notifier-container">
-			<p className="notification">Note moved to Archive successfully</p>
+			<p className="notification">
+				Note moved to {toastNotificationText} successfully
+			</p>
 		</div>
 	);
 };

@@ -12,6 +12,7 @@ const AppProvider = ({ children }) => {
 	const [filteredList, setFilteredList] = useState(notesList);
 	const [type, setType] = useState("notes");
 	const [searchTerm, setSearchTerm] = React.useState("");
+	const [toastNotificationText, setToastNotificationText] = useState("");
 
 	useEffect(() => {
 		let reqData = {};
@@ -30,26 +31,6 @@ const AppProvider = ({ children }) => {
 			.catch((error) => console.log(error));
 	}, [type, searchTerm]);
 
-	// useEffect(() => {
-	// 	if (!searchTerm) {
-	// 		fetchData(
-	// 			JSON.stringify({
-	// 				noteType: type,
-	// 			})
-	// 		)
-	// 			.then((result) => setNotesList(result))
-	// 			.catch((error) => console.log(error));
-	// 	} else {
-	// 		fetchData(
-	// 			JSON.stringify({
-	// 				searchQuery: searchTerm,
-	// 			})
-	// 		)
-	// 			.then((result) => setNotesList(result))
-	// 			.catch((error) => console.log(error));
-	// 	}
-	// }, [searchTerm]);
-
 	return (
 		<AppContext.Provider
 			value={{
@@ -59,13 +40,15 @@ const AppProvider = ({ children }) => {
 				setNotesList,
 				setType,
 				setSearchTerm,
+				setToastNotificationText,
 				isSidebarOpen,
 				activeId, // Sidebar Tab ID
-				SidebarData,
 				notesList,
 				filteredList,
 				type,
 				searchTerm,
+				toastNotificationText,
+				SidebarData,
 			}}
 		>
 			{children}
