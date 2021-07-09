@@ -4,7 +4,7 @@ import deleteNote from "../../services/api/delete";
 import { useGlobalContext } from "../../context/context";
 
 const DeletePermanent = ({ selectedId }) => {
-	const { notesList, setNotesList } = useGlobalContext();
+	const { notesList, setNotesList, setToastText } = useGlobalContext();
 
 	const deleteHandler = async (e) => {
 		e.preventDefault();
@@ -16,6 +16,8 @@ const DeletePermanent = ({ selectedId }) => {
 		await deleteNote({
 			query: selectedId,
 		});
+
+		await setToastText("Note Deleted successfully");
 	};
 
 	return (

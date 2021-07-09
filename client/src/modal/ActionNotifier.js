@@ -1,13 +1,27 @@
 import React from "react";
 import "./scss/notifier.css";
+import { useGlobalContext } from "../context/context";
 
-const ActionNotifier = ({ toastNotificationText }) => {
+const ActionNotifier = () => {
+	const { toastText } = useGlobalContext();
+
+	const [toastNotificationVisible, setToastNotificationVisible] =
+		React.useState(false);
+
+	React.useEffect(() => {
+		setToastNotificationVisible(true);
+		setTimeout(() => {
+			setToastNotificationVisible(false);
+		}, 2000);
+	}, [toastText]);
+
 	return (
-		<div className="notifier-container">
-			<p className="notification">
-				Note moved to {toastNotificationText} successfully
-			</p>
-		</div>
+		toastText &&
+		toastNotificationVisible && (
+			<div className="notifier-container">
+				<p className="notification">{toastText}</p>
+			</div>
+		)
 	);
 };
 

@@ -12,7 +12,7 @@ const AppProvider = ({ children }) => {
 	const [filteredList, setFilteredList] = useState(notesList);
 	const [type, setType] = useState("notes");
 	const [searchTerm, setSearchTerm] = React.useState("");
-	const [toastNotificationText, setToastNotificationText] = useState("");
+	const [toastText, setToastText] = useState("");
 
 	useEffect(() => {
 		let reqData = {};
@@ -40,14 +40,14 @@ const AppProvider = ({ children }) => {
 				setNotesList,
 				setType,
 				setSearchTerm,
-				setToastNotificationText,
+				setToastText,
 				isSidebarOpen,
 				activeId, // Sidebar Tab ID
 				notesList,
 				filteredList,
 				type,
 				searchTerm,
-				toastNotificationText,
+				toastText,
 				SidebarData,
 			}}
 		>

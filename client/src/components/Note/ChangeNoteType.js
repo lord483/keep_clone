@@ -5,7 +5,7 @@ import updateNote from "../../services/api/update";
 import getData from "../../context/getData";
 
 const ChangeNoteType = ({ newType, history, selectedId }) => {
-	const { setNotesList, setToastNotificationText } = useGlobalContext();
+	const { setNotesList, setToastText } = useGlobalContext();
 	let data = {
 		query: { selectedId },
 		noteData: {
@@ -22,7 +22,7 @@ const ChangeNoteType = ({ newType, history, selectedId }) => {
 			noteType: tempHistory[tempHistory.length - 1],
 		});
 		await setNotesList(result);
-		setToastNotificationText(newType);
+		await setToastText(`Note moved to ${newType.toUpperCase()} successfully`);
 	};
 
 	return (

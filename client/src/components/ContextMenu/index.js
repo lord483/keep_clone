@@ -3,6 +3,7 @@ import UpdateNote from "../Note/Update";
 import DeletePermanent from "../Note/DeletePermanent";
 import ChangeNoteType from "../Note/ChangeNoteType";
 import "./scss/contextMenu.css";
+import { useGlobalContext } from "../../context/context";
 
 const ContextMenu = ({
 	setSelectedId,

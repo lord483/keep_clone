@@ -1,6 +1,6 @@
 import React from "react";
 import SubmitBtn from "../SubmitBtn";
-// import { useGlobalContext } from "../../context/context";
+import { useGlobalContext } from "../../context/context";
 import updateNote from "../../services/api/update";
 
 const UpdateNote = ({
@@ -9,6 +9,7 @@ const UpdateNote = ({
 	newNoteTitle,
 	newNoteBody,
 }) => {
+	const { setToastText } = useGlobalContext();
 	const updateHandler = async (e) => {
 		let data = {
 			query: { selectedId },
@@ -20,6 +21,7 @@ const UpdateNote = ({
 		e.preventDefault();
 		await updateNote(data);
 		setSelectedId("");
+		await setToastText("Note Updated successfully");
 	};
 
 	return (
